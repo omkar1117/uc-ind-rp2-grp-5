@@ -4,7 +4,7 @@ A ranked-worklist model for hospital discharge planning, built on ten years of c
 
 **Deliverable 2 — Data Preprocessing and Initial Model Development**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/<org>/<repo>/blob/main/Deliverable2_Readmission.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1eYXfmnfr8qVV2nsrU0fsjE2HV467Lqp9)
 
 ---
 

@@ -115,22 +115,24 @@ Tuning optimises `average_precision`, not accuracy. Against this class balance, 
 
 ## Results
 
-> Fill these from your executed run. The notebook prints every figure below.
+Figures are from the executed notebook, scored on the 25% held-out test set (17,497 patients, 1,571 readmitted within 30 days).
 
 | Model | ROC-AUC | PR-AUC | Accuracy |
 | --- | --- | --- | --- |
-| Logistic Regression | — | — | — |
-| Random Forest (untuned) | — | — | — |
-| **Random Forest (tuned, final)** | — | — | — |
+| Logistic Regression | 0.646 | 0.164 | 0.657 |
+| Random Forest (untuned) | 0.651 | 0.169 | 0.722 |
+| **Random Forest (tuned, final)** | 0.650 | 0.167 | 0.722 |
 
 Reference values, both printed in the notebook:
 
-- **Majority-class accuracy** (predict nobody readmitted) — compare any accuracy figure against this, not against zero.
-- **Random-classifier PR-AUC** (equals the cohort positive rate) — compare PR-AUC against this.
+- **Majority-class accuracy** (predict nobody readmitted): **0.910**. Compare any accuracy figure against this, not against zero.
+- **Random-classifier PR-AUC** (equals the cohort positive rate): **0.090**. Compare PR-AUC against this.
 
-**At the operating threshold** (top 20% of predicted risk): recall — · precision — · lift — ×
+**At the operating threshold** (top 20% of predicted risk, a score of 0.523): recall 37.0% · precision 16.6% · lift 1.85×. Flagging 3,500 of 17,497 test patients captures 581 of the 1,571 true readmissions.
 
-Discrimination on this dataset is modest in all published work, typically ROC-AUC 0.64–0.68. That is a property of the problem, not a defect of the pipeline: 30-day readmission is driven substantially by social and post-discharge factors — housing stability, caregiver support, medication affordability, outpatient access — that an inpatient encounter record does not observe.
+All three models score about 1.9× the PR-AUC of a random ranker. Tuning did not improve on the untuned forest, and the forest leads logistic regression by only 0.003 PR-AUC, so the interpretable linear model remains a defensible choice.
+
+Discrimination is modest (ROC-AUC about 0.65), in line with the modest figures generally reported for this dataset. That is a property of the problem, not a defect of the pipeline: 30-day readmission is driven substantially by social and post-discharge factors — housing stability, caregiver support, medication affordability, outpatient access — that an inpatient encounter record does not observe.
 
 ---
 

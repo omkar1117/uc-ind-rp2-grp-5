@@ -47,8 +47,6 @@ Run all cells in order. Total runtime is a few minutes, dominated by the grid se
 ```
 .
 ├── Deliverable2_Readmission.ipynb   # the analysis — single source of truth
-├── deliverable2_pipeline.py         # same pipeline as a plain script
-├── Deliverable2_Report.docx         # written report (submission length)
 ├── Deliverable2_Report_Full.docx    # written report (unabridged)
 └── README.md
 ```
